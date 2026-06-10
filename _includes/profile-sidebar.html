@@ -1,0 +1,14 @@
+<aside class="profile-sidebar" aria-label="Profile">
+  <div class="profile-card">
+    <img class="profile-avatar" src="{{ site.author.avatar | escape }}" alt="{{ site.author.name | escape }}">
+    <h1>{{ site.author.name | escape }}</h1>
+    <p class="profile-role">{{ site.author.role | escape }}</p>
+    <p class="profile-affiliation">{{ site.author.affiliation | escape }}</p>
+    <p class="profile-location">{{ site.author.location | escape }}</p>
+
+    <div class="profile-links">
+      <a href="{{ site.author.github | escape }}">GitHub</a>
+      <a href="mailto:{{ site.author.email | escape }}">Email</a>
+    </div>
+  </div>
+</aside>

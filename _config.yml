@@ -1,0 +1,30 @@
+title: "Zihao Huang"
+description: "Academic homepage for geospatial simulation, raster workflows, and scalable spatial modeling."
+url: "https://zihaonova.github.io"
+baseurl: ""
+repository: "ZihaoNova/ZihaoNova.github.io"
+lang: "en"
+
+author:
+  name: "Zihao Huang"
+  role: "Geospatial Python engineer"
+  affiliation: "Zhejiang A&F University"
+  location: "Hangzhou, Zhejiang, China"
+  avatar: "https://github.com/ZihaoNova.png?size=320"
+  email: "huangzihao@zafu.edu.cn"
+  github: "https://github.com/ZihaoNova"
+
+markdown: kramdown
+highlighter: rouge
+
+sass:
+  style: compressed
+
+plugins: []
+
+exclude:
+  - README.md
+  - tests
+  - vendor
+  - Gemfile
+  - Gemfile.lock

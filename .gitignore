@@ -1,0 +1,9 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+Gemfile.lock
+.pytest_cache/
+__pycache__/
+*.py[cod]
