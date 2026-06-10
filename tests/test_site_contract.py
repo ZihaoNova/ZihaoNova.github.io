@@ -102,6 +102,7 @@ def test_google_scholar_workflow_is_manual_until_configured() -> None:
 
 def test_custom_visual_assets_and_polish_exist() -> None:
     css = read_text("assets/css/main.scss")
+    site_css = read_text("assets/css/site.css")
     head = read_text("_includes/head.html")
 
     required_assets = [
@@ -116,6 +117,8 @@ def test_custom_visual_assets_and_polish_exist() -> None:
 
     assert "Zihao Huang custom polish" in css
     assert ".site-footer" in css
+    assert 'href="assets/css/site.css"' in head
+    assert ".paper-box" in site_css
     assert "linear-gradient(135deg, #2563eb, #0f766e)" in css
     assert "<base target=" not in head
 
