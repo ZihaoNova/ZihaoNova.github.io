@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Windowed CA and Dask pipeline</title>
+  <desc id="desc">A tiled raster pipeline flowing into distributed compute blocks.</desc>
+  <rect width="640" height="360" fill="#f7fafc"/>
+  <rect x="36" y="36" width="568" height="288" rx="8" fill="#ffffff" stroke="#d8e0ea"/>
+  <g transform="translate(74 76)" stroke="#cbd5e1" stroke-width="2">
+    <rect width="180" height="180" fill="#eef2ff"/>
+    <path d="M60 0v180M120 0v180M0 60h180M0 120h180"/>
+    <rect x="60" y="60" width="60" height="60" fill="#93c5fd" stroke="#2563eb" stroke-width="4"/>
+  </g>
+  <g fill="none" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="7">
+    <path d="M282 166h80"/>
+    <path d="m344 144 24 22-24 22"/>
+  </g>
+  <g transform="translate(392 78)" fill="#fff" stroke="#64748b" stroke-width="3">
+    <rect x="0" y="0" width="70" height="54" rx="6"/>
+    <rect x="88" y="0" width="70" height="54" rx="6"/>
+    <rect x="0" y="72" width="70" height="54" rx="6"/>
+    <rect x="88" y="72" width="70" height="54" rx="6"/>
+    <rect x="44" y="144" width="70" height="54" rx="6"/>
+  </g>
+  <g fill="none" stroke="#0f766e" stroke-linecap="round" stroke-width="4">
+    <path d="M462 105h18M462 177h18M515 132v18M515 204v18"/>
+  </g>
+  <g fill="#111827" font-family="Arial, sans-serif" font-size="18" font-weight="700">
+    <text x="78" y="288">windowed raster</text>
+    <text x="391" y="288">Dask execution graph</text>
+  </g>
+</svg>

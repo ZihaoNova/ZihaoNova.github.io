@@ -1,0 +1,41 @@
+{% assign author = site.author %}
+
+<div itemscope itemtype="http://schema.org/Person" class="profile_box">
+  <div class="author__avatar">
+    <img src="{{ author.avatar }}" class="author__avatar" alt="{{ author.name }}">
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
+    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+  </div>
+
+  <div class="author__urls-wrapper">
+    <ul class="author__urls social-icons">
+      {% if site.description %}
+        <li><div>{{ site.description }}</div></li>
+      {% endif %}
+      {% if author.employer %}
+        <li>🏫 {{ author.employer }}</li>
+      {% endif %}
+      {% if author.location %}
+        <li>📍 {{ author.location }}</li>
+      {% endif %}
+      {% if author.github %}
+        <li><a href="https://github.com/{{ author.github }}">GitHub</a></li>
+      {% endif %}
+      {% if author.email %}
+        <li><a href="mailto:{{ author.email }}">Email</a></li>
+      {% endif %}
+    </ul>
+
+    <div class="author__urls_sm" aria-label="Compact profile links">
+      {% if author.github %}
+        <a href="https://github.com/{{ author.github }}">GitHub</a>
+      {% endif %}
+      {% if author.email %}
+        <a href="mailto:{{ author.email }}">Email</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

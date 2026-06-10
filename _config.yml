@@ -1,5 +1,5 @@
 title: "Zihao Huang"
-description: "Academic homepage for geospatial simulation, raster workflows, and scalable spatial modeling."
+description: "Student at Zhejiang A&F University working on geospatial Python systems for land-cover simulation, raster processing, and scalable spatial modeling."
 url: "https://zihaonova.github.io"
 baseurl: ""
 repository: "ZihaoNova/ZihaoNova.github.io"
@@ -7,12 +7,12 @@ lang: "en"
 
 author:
   name: "Zihao Huang"
-  role: "Geospatial Python engineer"
-  affiliation: "Zhejiang A&F University"
-  location: "Hangzhou, Zhejiang, China"
   avatar: "https://github.com/ZihaoNova.png?size=320"
+  bio: "Geospatial Python engineer"
+  employer: "Zhejiang A&F University"
+  location: "Hangzhou, Zhejiang, China"
   email: "huangzihao@zafu.edu.cn"
-  github: "https://github.com/ZihaoNova"
+  github: "ZihaoNova"
 
 markdown: kramdown
 highlighter: rouge
@@ -22,9 +22,15 @@ sass:
 
 plugins: []
 
+include:
+  - _pages
+
 exclude:
   - README.md
   - tests
+  - docs
   - vendor
   - Gemfile
   - Gemfile.lock
+  - _site
+  - .pytest_cache

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Land-cover simulation workflow</title>
+  <desc id="desc">A compact raster map showing land-cover classes and scenario arrows.</desc>
+  <rect width="640" height="360" fill="#f7fafc"/>
+  <rect x="36" y="36" width="568" height="288" rx="8" fill="#ffffff" stroke="#d8e0ea"/>
+  <g transform="translate(74 66)">
+    <rect width="260" height="220" fill="#edf2f7" stroke="#cbd5e1"/>
+    <g stroke="#ffffff" stroke-width="2">
+      <rect x="0" y="0" width="65" height="55" fill="#79b86f"/>
+      <rect x="65" y="0" width="65" height="55" fill="#79b86f"/>
+      <rect x="130" y="0" width="65" height="55" fill="#d5ad60"/>
+      <rect x="195" y="0" width="65" height="55" fill="#638fc5"/>
+      <rect x="0" y="55" width="65" height="55" fill="#79b86f"/>
+      <rect x="65" y="55" width="65" height="55" fill="#d5ad60"/>
+      <rect x="130" y="55" width="65" height="55" fill="#d5ad60"/>
+      <rect x="195" y="55" width="65" height="55" fill="#638fc5"/>
+      <rect x="0" y="110" width="65" height="55" fill="#4f9d69"/>
+      <rect x="65" y="110" width="65" height="55" fill="#79b86f"/>
+      <rect x="130" y="110" width="65" height="55" fill="#b65f54"/>
+      <rect x="195" y="110" width="65" height="55" fill="#d5ad60"/>
+      <rect x="0" y="165" width="65" height="55" fill="#4f9d69"/>
+      <rect x="65" y="165" width="65" height="55" fill="#4f9d69"/>
+      <rect x="130" y="165" width="65" height="55" fill="#b65f54"/>
+      <rect x="195" y="165" width="65" height="55" fill="#d5ad60"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#1d4ed8" stroke-linecap="round" stroke-linejoin="round" stroke-width="7">
+    <path d="M388 114h92"/>
+    <path d="m462 92 24 22-24 22"/>
+    <path d="M388 180h92"/>
+    <path d="m462 158 24 22-24 22"/>
+    <path d="M388 246h92"/>
+    <path d="m462 224 24 22-24 22"/>
+  </g>
+  <g fill="#111827" font-family="Arial, sans-serif" font-size="18" font-weight="700">
+    <text x="388" y="88">Scenario inputs</text>
+    <text x="388" y="154">Transition rules</text>
+    <text x="388" y="220">Output rasters</text>
+  </g>
+</svg>
