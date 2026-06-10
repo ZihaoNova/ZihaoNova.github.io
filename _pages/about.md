@@ -1,5 +1,4 @@
 ---
-layout: default
 permalink: /
 title: ""
 excerpt: ""
@@ -15,18 +14,23 @@ Hi! I am **Zihao Huang**, a student at **Zhejiang A&F University** working on ge
 
 My current work focuses on turning large spatial simulation workflows into reproducible, inspectable, and testable tools. I care about localized validation before expensive full-raster runs, clear modeling assumptions, and outputs that are easy to compare, debug, and explain.
 
-I am currently organizing public project artifacts around **land-cover simulation**, **GeoTIFF validation**, **cellular automata**, and **Dask/PyTorch geospatial pipelines**. Feel free to reach out through GitHub or email if you are interested in related research engineering work.
+My research interests include **land-cover simulation**, **GeoTIFF validation**, **cellular automata**, **Dask/PyTorch geospatial pipelines**, and practical research software for spatial modeling. I am organizing public project artifacts and notes around these directions.
+
+I am open to technical collaboration around geospatial simulation, raster workflow validation, and reliable Python tooling for spatial data.
+
 
 <span class='anchor' id='-news'></span>
 # 🔥 News
-- <span class="news-date">2026.06</span>: Organizing geospatial simulation workflows, raster validation notes, and project artifacts for public release.
-- <span class="news-date">2026.05</span>: Published a GitHub profile README focused on geospatial Python workflows.
+- *2026.06*: &nbsp;I am rebuilding this academic homepage with the full WD7ang-old / AcadHomepage template as the base.
+- *2026.06*: &nbsp;Organizing geospatial simulation workflows, raster validation notes, and project artifacts for public release.
+- *2026.05*: &nbsp;Published a GitHub profile README focused on geospatial Python workflows.
 
 <span class='anchor' id='-publications'></span>
-# 📝 Publications
+# 📝 Selected Publications
 
 Selected publications, manuscripts, and public preprints related to land-cover simulation, raster validation, and scalable geospatial modeling will be listed here as they become available.
 
+<span class='anchor' id='-projects'></span>
 # 🚀 Selected Projects
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Simulation</div><img src='images/land-cover-simulation.svg' alt="Land-cover simulation workflow" width="100%"></div></div>
@@ -34,24 +38,26 @@ Selected publications, manuscripts, and public preprints related to land-cover s
 
 [Land-cover simulation workflows]
 
-**Focus:** Scenario-driven spatial change modeling with explicit assumptions, year-by-year outputs, and comparison-ready raster artifacts.
+**Zihao Huang**
 
-**TL;DR:** I build Python workflows that make land-cover simulation outputs easier to reproduce, inspect, and explain before results are scaled into larger experiments.
+[**[Notes coming soon]**]
+[**[Code coming soon]**]
 
-<p class="tool-list"><span>Python</span><span>rasterio</span><span>GDAL</span><span>NumPy</span><span>PyTorch</span></p>
+**TL;DR:** Scenario-driven Python workflows for land-cover change simulation, with explicit assumptions, year-by-year raster outputs, and comparison-ready artifacts.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Raster QA</div><img src='images/raster-validation.svg' alt="Raster validation and AOI checks" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Raster QA</div><img src='images/raster-validation.svg' alt="Raster validation and AOI smoke checks" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Raster validation and AOI smoke checks]
 
-**Focus:** Fast localized checks for large GeoTIFF workflows, especially representative AOI windows before expensive full-raster runs.
+**Zihao Huang**
 
-**TL;DR:** I use small, inspectable validation artifacts to catch raster regressions early and make model behavior easier to compare.
+[**[Examples coming soon]**]
+[**[Validation notes coming soon]**]
 
-<p class="tool-list"><span>Python</span><span>rasterio</span><span>GDAL</span><span>xarray</span><span>NumPy</span></p>
+**TL;DR:** Fast localized AOI checks for large GeoTIFF workflows, designed to catch raster regressions before expensive full-raster runs.
 </div>
 </div>
 
@@ -60,11 +66,12 @@ Selected publications, manuscripts, and public preprints related to land-cover s
 
 [Windowed CA and Dask pipelines]
 
-**Focus:** Chunked cellular automata simulation over tiled raster windows, with attention to boundary behavior, allocation drift, and scalable processing.
+**Zihao Huang**
 
-**TL;DR:** I trace demand allocation and intermediate artifacts through the real pipeline path so distributed spatial simulation remains debuggable.
+[**[Pipeline notes coming soon]**]
+[**[Benchmarks coming soon]**]
 
-<p class="tool-list"><span>Python</span><span>Dask</span><span>PyTorch</span><span>rasterio</span><span>NumPy</span></p>
+**TL;DR:** Chunked cellular automata simulation over tiled raster windows, with attention to boundary behavior, allocation drift, and scalable Dask/PyTorch execution.
 </div>
 </div>
 
@@ -81,7 +88,7 @@ Selected publications, manuscripts, and public preprints related to land-cover s
 - Internship and research experience entries will be added here when public details are ready.
 
 <span class='anchor' id='-honors-and-awards'></span>
-# 🎖 Honors and Awards
+# 🎖 Selected Honors and Awards
 - Selected awards and honors will be added when public entries are ready.
 
 <span class='anchor' id='-educations'></span>

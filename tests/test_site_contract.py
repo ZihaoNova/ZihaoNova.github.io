@@ -8,126 +8,139 @@ def read_text(relative_path: str) -> str:
     return (ROOT / relative_path).read_text(encoding="utf-8")
 
 
-def test_site_identity_config() -> None:
-    config = read_text("_config.yml")
-
-    assert 'title: "Zihao Huang"' in config
-    assert 'repository: "ZihaoNova/ZihaoNova.github.io"' in config
-    assert 'url: "https://zihaonova.github.io"' in config
-    assert 'name: "Zihao Huang"' in config
-    assert 'employer: "Zhejiang A&F University"' in config
-
-
-def test_homepage_uses_wd7ang_style_contract() -> None:
-    homepage = read_text("_pages/about.md")
-
-    required_sections = [
-        "layout: default",
-        "id='about-me'",
-        "id='-news'",
-        "# 🔥 News",
-        "id='-publications'",
-        "# 📝 Publications",
-        "# 🚀 Selected Projects",
-        "# 💬 Services",
-        "id='-invited-talks'",
-        "# 🎙 Invited Talks",
-        "id='-internships'",
-        "# 🏢 Internships",
-        "id='-honors-and-awards'",
-        "# 🎖 Honors and Awards",
-        "id='-educations'",
-        "# 📖 Educations",
+def test_full_template_directories_are_present() -> None:
+    required_paths = [
+        "_sass/_variables.scss",
+        "_sass/vendor/font-awesome/fontawesome.scss",
+        "assets/js/main.min.js",
+        "assets/fonts/fa-solid-900.woff2",
+        "google_scholar_crawler/main.py",
+        ".github/workflows/google_scholar_crawler.yaml",
+        "_includes/fetch_google_scholar_stats.html",
+        "_includes/seo.html",
     ]
 
-    for section in required_sections:
-        assert section in homepage
+    for relative_path in required_paths:
+        assert (ROOT / relative_path).exists(), relative_path
 
 
-def test_project_cards_cover_geospatial_portfolio() -> None:
+def test_default_layout_does_not_reference_missing_compress_layout() -> None:
+    default_layout = read_text("_layouts/default.html")
+
+    assert "layout: compress" not in default_layout
+    assert "<!doctype html>" in default_layout
+
+
+def test_site_identity_config_is_zihao() -> None:
+    config = read_text("_config.yml")
+
+    assert 'title                    : "Zihao Huang"' in config
+    assert 'repository               : "ZihaoNova/ZihaoNova.github.io"' in config
+    assert 'url                      : "https://zihaonova.github.io"' in config
+    assert 'name             : "Zihao Huang"' in config
+    assert 'bio              : "Zhejiang A&F University"' in config
+    assert 'github           : "ZihaoNova"' in config
+    assert "GOOGLE_SCHOLAR_ID" not in config
+
+
+def test_homepage_content_is_zihao_profile() -> None:
     homepage = read_text("_pages/about.md")
 
-    required_projects = [
+    required_text = [
+        "Zihao Huang",
+        "Zhejiang A&F University",
+        "land-cover simulation",
+        "GeoTIFF validation",
+        "Dask/PyTorch geospatial pipelines",
+        "Selected Publications",
+        "Selected Projects",
         "Land-cover simulation workflows",
         "Raster validation and AOI smoke checks",
         "Windowed CA and Dask pipelines",
     ]
 
-    for project in required_projects:
-        assert project in homepage
+    for text in required_text:
+        assert text in homepage
 
     assert homepage.count("class='paper-box'") == 3
 
 
-def test_navigation_matches_template_shape() -> None:
+def test_navigation_anchors_are_stable() -> None:
     navigation = read_text("_data/navigation.yml")
+    homepage = read_text("_pages/about.md")
 
-    required_links = [
-        'title: "About Me"',
-        'url: "/#about-me"',
-        'title: "News"',
-        'url: "/#-news"',
-        'title: "Publications"',
-        'url: "/#-publications"',
-        'title: "Honors and Awards"',
-        'title: "Educations"',
-        'title: "Invited Talks"',
-        'title: "Internships"',
+    required_pairs = [
+        ('url: "/#about-me"', "id='about-me'"),
+        ('url: "/#-news"', "id='-news'"),
+        ('url: "/#-publications"', "id='-publications'"),
+        ('url: "/#-honors-and-awards"', "id='-honors-and-awards'"),
+        ('url: "/#-educations"', "id='-educations'"),
+        ('url: "/#-invited-talks"', "id='-invited-talks'"),
+        ('url: "/#-internships"', "id='-internships'"),
     ]
 
-    for link in required_links:
-        assert link in navigation
+    for nav_url, anchor in required_pairs:
+        assert nav_url in navigation
+        assert anchor in homepage
 
 
-def test_layout_keeps_wd7ang_class_names() -> None:
-    default_layout = read_text("_layouts/default.html")
-    masthead = read_text("_includes/masthead.html")
-    sidebar_include = read_text("_includes/sidebar.html")
-    sidebar = read_text("_includes/author-profile.html")
+def test_google_scholar_workflow_is_manual_until_configured() -> None:
+    config = read_text("_config.yml")
+    scripts = read_text("_includes/scripts.html")
+    workflow = read_text(".github/workflows/google_scholar_crawler.yaml")
+    funding = read_text(".github/FUNDING.yml")
+
+    assert "google_scholar_enabled   : false" in config
+    assert "{% if site.google_scholar_enabled %}" in scripts
+    assert "workflow_dispatch:" in workflow
+    assert "Check Scholar Secret" in workflow
+    assert "GOOGLE_SCHOLAR_ID is not configured; skipping crawler." in workflow
+    assert "schedule:" not in workflow
+    assert "page_build:" not in workflow
+    assert "github: RayeRen" not in funding
+
+
+def test_custom_visual_assets_and_polish_exist() -> None:
     css = read_text("assets/css/main.scss")
+    head = read_text("_includes/head.html")
 
-    assert "masthead" in default_layout
-    assert "page__content" in default_layout
-    assert "sidebar sticky" in sidebar_include
+    required_assets = [
+        "images/site-icon.svg",
+        "images/land-cover-simulation.svg",
+        "images/raster-validation.svg",
+        "images/dask-pipeline.svg",
+    ]
 
-    for snippet in ["profile_box", "author__avatar", "author__urls"]:
-        assert snippet in sidebar
+    for relative_path in required_assets:
+        assert (ROOT / relative_path).exists(), relative_path
 
-    for snippet in [".paper-box", ".badge", ".masthead", ".page__content"]:
-        assert snippet in css
+    assert "Zihao Huang custom polish" in css
+    assert ".site-footer" in css
+    assert "linear-gradient(135deg, #2563eb, #0f766e)" in css
+    assert "<base target=" not in head
 
 
-def test_no_noisy_profile_widgets() -> None:
-    banned_snippets = [
-        "github-readme-stats",
-        "github-profile-trophy",
-        "komarev.com",
-        "readme-typing-svg",
+def test_public_site_does_not_render_template_author_content() -> None:
+    public_files = [
+        "_config.yml",
+        "_pages/about.md",
+        "_layouts/default.html",
+        "_includes/head/custom.html",
+        "assets/css/main.scss",
+        "README.md",
+    ]
+
+    banned = [
+        "Weidong Tang",
+        "Xidian University",
+        "wdtang0705",
+        "NH9USaYAAAAJ",
         "mapmyvisitors",
-        "google-scholar-stats",
+        "Alibaba Group",
+        "TeleAI",
     ]
 
-    checked_suffixes = {".html", ".md", ".scss", ".yml", ".yaml", ".svg"}
-    checked_files = [
-        path
-        for path in ROOT.rglob("*")
-        if path.is_file()
-        and ".git" not in path.parts
-        and "tests" not in path.parts
-        and path.suffix.lower() in checked_suffixes
-    ]
-
-    assert checked_files
-
-    for path in checked_files:
-        text = path.read_text(encoding="utf-8", errors="ignore").lower()
-        for snippet in banned_snippets:
-            assert snippet not in text, f"{snippet} found in {path.relative_to(ROOT)}"
-
-
-def test_template_attribution_notice_present() -> None:
-    notice = read_text("NOTICE.md")
-
-    assert "WD7ang/WD7ang-old.github.io" in notice
-    assert "MIT License" in notice
-    assert "Copyright (c) 2022 Yi Ren" in notice
+    for relative_path in public_files:
+        text = read_text(relative_path)
+        for snippet in banned:
+            assert snippet not in text, f"{snippet} found in {relative_path}"

@@ -1,9 +1,9 @@
 _site/
+push.sh
+.DS_Store
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-vendor/
-Gemfile.lock
 .pytest_cache/
 __pycache__/
 *.py[cod]

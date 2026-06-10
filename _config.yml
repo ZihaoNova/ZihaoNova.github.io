@@ -1,36 +1,164 @@
-title: "Zihao Huang"
-description: "Student at Zhejiang A&F University working on geospatial Python systems for land-cover simulation, raster processing, and scalable spatial modeling."
-url: "https://zihaonova.github.io"
-baseurl: ""
-repository: "ZihaoNova/ZihaoNova.github.io"
-lang: "en"
+# Welcome to Jekyll!
+#
+# This site keeps the full AcadHomepage / WD7ang-old template structure while
+# replacing the public content with Zihao Huang's academic profile.
 
+# Site Settings
+title                    : "Zihao Huang"
+description              : "Student at Zhejiang A&F University working on geospatial Python systems for land-cover simulation, raster processing, and scalable spatial modeling."
+url                      : "https://zihaonova.github.io"
+repository               : "ZihaoNova/ZihaoNova.github.io"
+google_scholar_stats_use_cdn : true
+google_scholar_enabled   : false
+
+# Google analytics
+google_analytics_id      :
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+baidu_site_verification  :
+
+# Site Author
 author:
-  name: "Zihao Huang"
-  avatar: "https://github.com/ZihaoNova.png?size=320"
-  bio: "Geospatial Python engineer"
-  employer: "Zhejiang A&F University"
-  location: "Hangzhou, Zhejiang, China"
-  email: "huangzihao@zafu.edu.cn"
-  github: "ZihaoNova"
+  name             : "Zihao Huang"
+  avatar           : "https://github.com/ZihaoNova.png?size=320"
+  bio              : "Zhejiang A&F University"
+  location         : "Hangzhou, Zhejiang, China"
+  employer         :
+  pubmed           :
+  googlescholar    :
+  email            : "huangzihao@zafu.edu.cn"
+  researchgate     :
 
+  wechat           :
+  rednote          :
+
+  uri              : "https://zihaonova.github.io"
+  bitbucket        :
+  codepen          :
+  dribbble         :
+  flickr           :
+  facebook         :
+  foursquare       :
+  github           : "ZihaoNova"
+  google_plus      :
+  keybase          :
+  instagram        :
+  impactstory      :
+  lastfm           :
+  linkedin         :
+  dblp             :
+  orcid            :
+  pinterest        :
+  soundcloud       :
+  stackoverflow    :
+  steam            :
+  tumblr           :
+  twitter          :
+  vine             :
+  weibo            :
+  xing             :
+  youtube          :
+  wikipedia        :
+
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - docs
+  - google_scholar_crawler
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - .github
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - config
+  - gulpfile.js
+  - log
+  - node_modules
+  - package.json
+  - tmp
+  - vendor
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+
+# Conversion
 markdown: kramdown
 highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      author_profile: true
+
+
+# Sass/SCSS
 sass:
+  sass_dir: _sass
   style: compressed
 
-plugins: []
 
-include:
-  - _pages
+# Outputting
+permalink: /:categories/:title/
+timezone: Asia/Shanghai
 
-exclude:
-  - README.md
-  - tests
-  - docs
-  - vendor
-  - Gemfile
-  - Gemfile.lock
-  - _site
-  - .pytest_cache
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+
+
+# HTML Compression
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

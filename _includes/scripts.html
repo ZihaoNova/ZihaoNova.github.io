@@ -1,3 +1,6 @@
-<script>
-  document.documentElement.classList.remove("no-js");
-</script>
+<script src="assets/js/main.min.js"></script>
+
+{% include analytics.html %}
+{% if site.google_scholar_enabled %}
+  {% include fetch_google_scholar_stats.html %}
+{% endif %}
